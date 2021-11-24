@@ -1,0 +1,113 @@
+.gallery {
+  padding-bottom: 0;
+}
+.gallery__title {
+  margin-bottom: 75px;
+}
+.gallery__picture-container {
+  height: 1960px;
+  position: relative;
+  overflow: hidden;
+}
+.gallery__picture-container::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background: linear-gradient(
+    to top,
+    #000 0%,
+    rgba(0, 0, 0, 0.5) 15%,
+    rgba(0, 0, 0, 0) 20%
+  );
+}
+
+.gallery__picture-inner-container {
+  width: 100%;
+  position: relative;
+  height: 3000px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  row-gap: 24px;
+}
+.gallery__picture-inner-container::before,
+.gallery__picture-inner-container::after {
+  content: '';
+  flex-basis: 100%;
+  width: 0;
+  order: 2;
+}
+
+.gallery-img {
+  display: block;
+  //   3 колонки с отступаи между ними 36 * 2 = 72px
+  width: calc((100% - 72px) / 3);
+  transform: translateY(80px) scale(0.9);
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+}
+.gallery-img.active {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  transition: all 0.8s ease 0s;
+}
+
+.gallery-img:nth-child(3n + 1) {
+  order: 1;
+  align-self: flex-start;
+}
+.gallery-img:nth-child(3n + 2) {
+  order: 2;
+  align-self: center;
+}
+.gallery-img:nth-child(3n) {
+  order: 3;
+  align-self: flex-end;
+}
+.gallery__picture-inner-container > *:first-child {
+  margin-top: 50px;
+}
+.gallery__picture-inner-container > *:nth-child(3) {
+  margin-top: 50px;
+}
+
+@media (max-width: 1405px) {
+  .gallery__picture-container {
+    height: 1265px;
+  }
+}
+@media (max-width: $md2+px) {
+  .gallery__title {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 890px) {
+  .gallery__picture-container {
+    height: 1080px;
+  }
+}
+@media (max-width: $md3+px) {
+  .gallery__title {
+    margin-bottom: 40px;
+  }
+  .gallery-img {
+    //   2 колонки с отступаи между ними 24 * 1 = 24px
+    width: calc((100% - 24px) / 2);
+  }
+  .gallery__picture-inner-container > *:nth-child(3) {
+    margin-top: 24px;
+  }
+  .gallery__picture-inner-container > *:first-child {
+    margin-right: 24px;
+  }
+}
+
+@media (max-width: $md4+px) {
+  .gallery__picture-container {
+    height: 637px;
+  }
+} ;
