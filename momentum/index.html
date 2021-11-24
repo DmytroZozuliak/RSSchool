@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>momentum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="./assets/favicon.ico" rel="shortcut icon" />
+	<!-- CSS -->
+	<link rel="stylesheet" href="./css/owfont-regular.css" />
+	<link rel="stylesheet" href="./css/style.min.css" />
+
+</head>
+
+<body>
+	<!-- * Body code -->
+	<!-- * header -->
+	<header class="header">
+
+		<div class="player">
+			<div class="player__title"></div>
+
+
+			<div class="player__navigation">
+				<div class="player-controls">
+					<button class="play-prev player-icon"></button>
+					<button class="play player-icon"></button>
+					<button class="play-next player-icon"></button>
+				</div>
+
+				<div class="player__time">
+					<span class="player__time-current">0:00</span>
+					<span class="player__time-divide">/</span>
+					<span class="player__time-total"></span>
+				</div>
+
+				<div class="player__panel-wrapper">
+					<input class="progress progress-bar video-bar" id="progress-bar" type="range" value="0" min="0" max="100"
+						step="0.1">
+
+					<div class="volume-wrapper">
+						<button class="volume player-icon"></button>
+						<input type="range" value="40" min="0" max="100" step="1" name="volume"
+							class="progress progress-volume">
+					</div>
+				</div>
+			</div>
+
+			<ul class="play-list"></ul>
+		</div>
+
+		<div class="main-menu">
+			<div class="main-menu__btn">
+				<button class="icon-down"></button>
+				<div class="main-menu__title">settings</div>
+				<div class="main-menu__icon">
+				</div>
+				<button class="icon-down"></button>
+			</div>
+
+			<div class="main-menu__wrapper popup">
+				<div class="popup__title"> menu</div>
+				<ul class="popup__content">
+					<li class="popup-language">
+						<div class="popup__content-menu-name title-language">Change language</div>
+						<div class="popup-language__icon change-language">
+							<span class="en language-span">En</span>
+							<span class="player__time-divide">/</span>
+							<span class="ru language-span">Ru</span>
+						</div>
+					</li>
+
+
+					<input type="radio" name="imgApi" class="input-radio" id="githubImg" checked value="github">
+					<input type="radio" name="imgApi" class="input-radio" id="unsplash" value="unsplash">
+					<input type="radio" name="imgApi" class="input-radio" id="flickr" value="flickr">
+
+					<div class="popup__content-menu-name title-img popup__title">Wallpapers from</div>
+
+					<li class="popup-img">
+						<label for="githubImg" id="label-1-name" class="popup__content-menu-name">
+							Gitub
+						</label>
+						<label for="githubImg" id="label-1" class="popup-img__icon">
+						</label>
+
+					</li>
+					<li class="popup-img">
+						<label for="unsplash" id="label-2-name" class="popup__content-menu-name">
+							Unsplash
+						</label>
+						<label for="unsplash" id="label-2" class="popup-img__icon">
+						</label>
+					</li>
+					<li class="popup-img">
+						<label for="flickr" id="label-3-name" class="popup__content-menu-name">
+							Flickr
+						</label>
+						<label for="flickr" id="label-3" class="popup-img__icon">
+						</label>
+					</li>
+
+					<div class="popup-img__teg teg">
+						<div class="teg__title">Searh-teg:</div>
+						<input type="text" class="teg__key" />
+					</div>
+					<div class="popup__content-menu-name-span">(available only for Unsplash and Flickr)</div>
+
+					<!-- checkboxes display -->
+
+					<li class="popup__checkboks">
+						<input type="checkbox" id="weatherCheckbox" checked />
+						<label for="weatherCheckbox" id="weatherCheckboxLabel" class="popup__content-menu-name">Weather!
+						</label>
+						<label for="weatherCheckbox" id="check-dot-1" class="popup-img__icon">
+						</label>
+					</li>
+
+					<li class="popup__checkboks">
+						<input type="checkbox" id="musicCheckbox" checked />
+						<label for="musicCheckbox" id="musicCheckboxLabel" class="popup__content-menu-name">Music
+						</label>
+						<label for="musicCheckbox" id="check-dot-2" class="popup-img__icon">
+						</label>
+					</li>
+
+					<li class="popup__checkboks">
+						<input type="checkbox" id="clockCheckbox" checked />
+						<label for="clockCheckbox" id="clockCheckboxLabel" class="popup__content-menu-name">Clock
+						</label>
+						<label for="clockCheckbox" id="check-dot-3" class="popup-img__icon">
+						</label>
+					</li>
+
+					<li class="popup__checkboks">
+						<input type="checkbox" id="dateCheckbox" checked />
+						<label for="dateCheckbox" id="dateCheckboxLabel" class="popup__content-menu-name">Date
+						</label>
+						<label for="dateCheckbox" id="check-dot-4" class="popup-img__icon">
+						</label>
+					</li>
+
+					<li class="popup__checkboks">
+						<input type="checkbox" id="greetingCheckbox" checked />
+						<label for="greetingCheckbox" id="greetingCheckboxLabel" class="popup__content-menu-name">Greeting
+						</label>
+						<label for="greetingCheckbox" id="check-dot-5" class="popup-img__icon">
+						</label>
+					</li>
+
+					<li class="popup__checkboks">
+						<input type="checkbox" id="quotesCheckbox" checked />
+						<label for="quotesCheckbox" id="quotesCheckboxLabel" class="popup__content-menu-name">Quotes
+						</label>
+						<label for="quotesCheckbox" id="check-dot-6" class="popup-img__icon">
+						</label>
+					</li>
+
+					<li class="popup__checkboks">
+						<input type="checkbox" id="todoCheckbox" checked />
+						<label for="todoCheckbox" id="todoCheckboxLabel" class="popup__content-menu-name">Todo
+						</label>
+						<label for="todoCheckbox" id="check-dot-6" class="popup-img__icon">
+						</label>
+					</li>
+
+
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="weather">
+			<input type="text" class="city" />
+			<i class="weather-icon owf"></i>
+			<div class="weather-error"></div>
+			<div class="description-container">
+				<span class="temperature"></span>
+				<span class="weather-description"></span>
+			</div>
+			<div class="wind"></div>
+			<div class="humidity"></div>
+		</div>
+
+	</header>
+
+	<!-- * main -->
+	<main class="main">
+		<div class="slider-icons">
+			<button class="slide-prev slider-icon"></button>
+			<button class="slide-next slider-icon"></button>
+		</div>
+
+		<time class="time"></time>
+		<date class="date"></date>
+
+		<div class="greeting-container">
+			<span class="greeting"></span>
+			<input type="text" class="name" />
+		</div>
+	</main>
+
+	<!-- * footer -->
+	<footer class="footer">
+		<div class="todo">
+			<div class="todo__btn">
+				<div class="main-menu__title">todo</div>
+				<div class="todo__icon">
+				</div>
+			</div>
+
+			<div class="todo-menu__wrapper popup-todo">
+				<div class="popup-todo-header">Todo list</div>
+				<div class="inputField">
+					<input type="text" placeholder="Add your new todo">
+					<button></button>
+				</div>
+				<ul class="todoList">
+					<!-- data from local storage -->
+					<!-- <li>TextTodo<span class="icon"></span></li> -->
+				</ul>
+				<div class="popup-todo-footer">
+					<div>
+						<span class="pendingText">pending tasks:</span>
+						<span class="pendingTasks"></span>
+					</div>
+					<!-- <span>You have <span class="pendingTasks"></span> pending tasks:</span> -->
+					<button>Clear All</button>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="quote-wrapper">
+			<button class="change-quote"></button>
+			<div>
+				<div class="quote"></div>
+				<div class="author"></div>
+			</div>
+		</div>
+
+		<div class="personal-data__info">
+			<div class="personal-data__year">© 2021</div>
+
+			<a href="https://rs.school/js/" target="_blank">
+				<div class="personal-data__school"></div>
+			</a>
+
+			<a href="https://github.com/DmytroZozuliak" target="_blank">
+				<div class="personal-data__gihub">Dmytro Zozuliak</div>
+			</a>
+
+		</div>
+	</footer>
+
+	<!-- * End of body code -->
+	<!-- Scripts after -->
+	<script type="module" src="./js/index.js"></script>
+</body>
+
+</html>
