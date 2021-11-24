@@ -1,0 +1,185 @@
+.modal-wrapper {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: rgba(#000000, 0.6);
+    transition: all 0.5s ease 0s;
+
+    @include flex();
+}
+
+.modal-window {
+    z-index: 10;
+    overflow: hidden;
+    max-width: 525px;
+    padding: 30px;
+    margin: 0 10px;
+    background: #ffffff;
+    border-radius: 20px;
+    color: #010101;
+}
+
+.modal-answer__result {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+}
+
+.modal-answer__result.right {
+    background: url('../assets/img/logos/right_answer.png');
+}
+
+.modal-answer__result.wrong {
+    background: url('../assets/img/logos/wrong_answer.png');
+}
+
+.modal-answer__img {
+    position: relative;
+    height: 420px;
+    margin-bottom: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.modal-answer__name {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 39px;
+    text-align: center;
+}
+
+.modal-answer__author {
+    font-size: 22px;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 26px;
+    text-align: center;
+}
+
+.modal-answer__nextbtn {
+    width: 400px;
+    margin: 35px auto 0;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    transition: all 0.3s ease 0s;
+}
+
+//modal-score ===================================
+.modal-score {
+    flex-direction: column;
+    align-items: center;
+
+    @include flex();
+}
+
+.modal-score__icon {
+    background-color: $pinkyColor;
+    mask-size: cover;
+}
+
+.modal-score__icon.common-score {
+    width: 165px;
+    height: 155px;
+    mask-image: url('../assets/svg/goblet.svg');
+}
+
+.modal-score__icon.top-score {
+    width: 320px;
+    height: 125px;
+    mask-image: url('../assets/svg/stars.svg');
+}
+
+.modal-score__icon.low-score {
+    width: 165px;
+    height: 155px;
+    mask-image: url('../assets/svg/goblet-fail.svg');
+}
+
+.modal-score__text {
+    margin-top: 30px;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 51px;
+}
+
+.modal-score__nested-info {
+    align-items: center;
+    justify-content: center;
+    font-size: 82px;
+    font-weight: bold;
+    line-height: 102px;
+
+    @include flex();
+}
+
+.modal-score__divide {
+    margin: 0 10px;
+}
+
+.modal-score__btns {
+    justify-content: space-between;
+    margin-top: 60px;
+    column-gap: 20px;
+
+    @include flex();
+}
+
+.modal-score__btns > div {
+    width: 210px;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    transition: all 0.3s ease 0s;
+}
+
+@media (max-width: 500px) {
+    .modal-window {
+        width: 90%;
+    }
+
+    .modal-answer__img {
+        height: 0;
+        padding-bottom: 100%;
+    }
+
+    .modal-score__text,
+    .modal-score__btns {
+        margin-top: 15px;
+    }
+
+    .modal-score__text {
+        font-size: 30px;
+    }
+
+    .modal-score__nested-info {
+        font-size: 50px;
+        font-weight: bold;
+        line-height: 50px;
+    }
+
+    .modal-score__btns {
+        flex-direction: column;
+        font-size: 20px;
+        line-height: 20px;
+        row-gap: 10px;
+    }
+
+    .modal-answer__nextbtn {
+        width: 100%;
+    }
+}

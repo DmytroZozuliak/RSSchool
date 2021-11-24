@@ -1,0 +1,99 @@
+// <МИКСИНЫ>==============================================
+
+@import './mixins/flex';
+
+@import './mixins/anim';
+
+@import './mixins/media';
+// </МИКСИНЫ>============================================
+
+// <ШРИФТЫ>==============================================
+
+@import './utils/fonts';
+// </ШРИФТЫ>=============================================
+
+// <ПЕРЕМЕННЫЕ===========================================
+
+@import './utils/variables';
+// </ПЕРЕМЕННЫЕ==========================================
+
+// <ОБНУЛЕНИЕБ ОБЩИЕ ПАРАМЕТРЫ===========================
+
+@import './reset/_reset';
+
+@import './components/_ibg';
+// @import '~normalize.css';
+// </ОБНУЛЕНИЕБ ОБЩИЕ ПАРАМЕТРЫ=========================
+
+// <ОСНОВНОЙ КОД========================================
+
+@import './common/global';
+
+// HEADER
+// @import './common/header';
+
+//main-page ==========================================
+
+@import './common/main-page';
+
+//settings-page ========================================
+
+@import './common/settings-page';
+
+//artists-page ==========================================
+
+@import './common/artists-page';
+
+// artists questions ====================================
+
+@import './common/artists-questions';
+
+// modal-answer + modal-score===========================
+
+@import './common/modal';
+
+// result-page====================================
+
+@import './common/result-page';
+
+// blitz-game
+
+@import './common/blitz-page';
+
+// Pesonal data
+
+@import './common/footer';
+
+// ripple effect=================================
+
+@import './common/ripple-effect';
+
+// </ОСНОВНОЙ КОД======================================
+
+/* * {
+	background-color: rgba(255, 0, 0, 0.2);
+  }
+  * * {
+	background-color: rgba(0, 255, 0, 0.2);
+  }
+  * * * {
+	background-color: rgba(0, 0, 255, 0.2);
+  }
+  * * * * {
+	background-color: rgba(255, 0, 255, 0.2);
+  }
+  * * * * * {
+	background-color: rgba(0, 255, 255, 0.2);
+  }
+  * * * * * * {
+	background-color: rgba(255, 255, 0, 0.2);
+  }
+  * * * * * * * {
+	background-color: rgba(255, 0, 0, 0.2);
+  }
+  * * * * * * * * {
+	background-color: rgba(0, 255, 0, 0.2);
+  }
+  * * * * * * * * * {
+	background-color: rgba(0, 0, 255, 0.2);
+  } */

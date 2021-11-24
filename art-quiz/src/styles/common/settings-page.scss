@@ -1,0 +1,229 @@
+.settings-page {
+    display: none;
+}
+
+.settings-page__wrapper {
+    background: #000000;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.settings-page__wrapper > *:not(:last-child) {
+    margin-bottom: 60px;
+}
+
+.underline-white {
+    height: 1px;
+    margin-top: 2px;
+    background: $pinkyColor;
+}
+
+.setting-title {
+    margin-bottom: 40px;
+    font-size: 34px;
+    font-weight: bold;
+    line-height: 28px;
+}
+
+.volume-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.volume {
+    width: 35px;
+    height: 35px;
+    margin-right: 45px;
+    background-color: $pinkyColor;
+    mask-image: url('../assets/svg/volume-medium.svg');
+    mask-size: cover;
+}
+
+.volume.mute {
+    width: 50px;
+    height: 35px;
+    margin-right: 30px;
+    mask-image: url('../assets/svg/volume-mute.svg');
+}
+
+.progress {
+    height: 8px;
+    -webkit-appearance: none;
+    background:
+        linear-gradient(
+            to right,
+            $pinkyColor 0%,
+            $pinkyColor 20%,
+            #a4a4a4 20%,
+            #a4a4a4 100%
+        );
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.5s ease-in;
+}
+
+.progress::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    -webkit-appearance: none;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: ew-resize;
+}
+
+.progress-volume {
+    width: 240px;
+}
+
+.time-value__wrapper {
+    display: flex;
+    font-size: 30px;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+.time-value__wrapper input,
+.time-value__wrapper button {
+    width: 50px;
+    height: 35px;
+    border: none;
+    font-family: sans-serif;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.time-value__wrapper button {
+    background: #000000;
+    color: #ffffff;
+}
+
+.time-value__wrapper button:hover {
+    color: $pinkyColor;
+}
+
+.time-value__wrapper input {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+}
+
+.time-value {
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type='checkbox'] {
+    display: none;
+}
+
+.time-value__icon {
+    width: 35px;
+    height: 35px;
+    background: #ffffff;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.time-value__icon:hover,
+.time-value__icon:active {
+    background-color: #a4a4a4;
+}
+
+#time-checkbox:checked ~ .time-value #label-icon {
+    background-color: $pinkyColor;
+}
+
+#time-checkbox:checked ~ .time-value #label-name {
+    color: $pinkyColor;
+}
+
+.setting-page__time-value {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-page__btns {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    row-gap: 40px;
+}
+
+.settings-page__save-btn,
+.settings-page__default-btn {
+    padding: 15px;
+}
+
+@media (max-width: $md3) {
+    .settings-page__save-btn,
+    .settings-page__default-btn {
+        height: 50px;
+        padding: 0 10px;
+        font-size: 22px;
+        line-height: 22;
+    }
+
+    .setting-title {
+        margin-bottom: 20px;
+        font-size: 26px;
+        line-height: 26px;
+    }
+
+    .volume {
+        width: 25px;
+        height: 25px;
+        margin-right: 30px;
+    }
+
+    .volume.mute {
+        width: 35px;
+        height: 25px;
+        margin-right: 20px;
+    }
+
+    .progress-volume {
+        width: 150px;
+        height: 5px;
+    }
+
+    .time-value {
+        font-size: 25px;
+        line-height: 25px;
+    }
+
+    #label-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .time-value__wrapper input,
+    .time-value__wrapper button {
+        height: 25px;
+        font-size: 25px;
+        line-height: 25px;
+    }
+}
+
+@media (max-width: 500px) {
+    .setting-page__volume {
+        margin-top: 20px;
+    }
+
+    .settings-page__wrapper > *:not(:last-child) {
+        margin-bottom: 40px;
+    }
+
+    .settings-page__btns {
+        margin-top: 25px;
+        row-gap: 15px;
+    }
+}

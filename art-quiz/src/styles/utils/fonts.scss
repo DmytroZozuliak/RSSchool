@@ -1,0 +1,30 @@
+/* @font-face {
+    font-family: "Arial-MT";
+    src: url("../assets/fonts/Arial-MT.woff") format("woff");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Owfont";
+    src:
+        url("../assets/fonts/owfont-regular.eot") format("embedded-opentype"),
+        url("../assets/fonts/owfont-regular.otf") format("opentype"),
+        url("../assets/fonts/owfont-regular.svg") format("svg"),
+        url("../assets/fonts/owfont-regular.ttf") format("truetype"),
+        url("../assets/fonts/owfont-regular.woff") format("woff");
+    font-weight: 400;
+}
+*/
+
+// *Пример подключение шрифт
+// @font-face {
+//     font-family: 'Arial-MT';
+//     font-weight: 400;
+//     src: url('../assets/fonts/Arial-MT.woff'); /* Путь к файлу со шрифтом */
+// }
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
+
+// <ШРИФТ ПО УМОЛЧАНИЮ===================================
+$fontfamily: 'Raleway', sans-serif;
+// </ШРИФТ ПО УМОЛЧАНИЮ==================================

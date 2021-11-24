@@ -1,0 +1,95 @@
+// <ОБОЛОЧКА=============================================
+// .wrapper {
+//   width: 100%;
+//   min-height: 100%;
+//   overflow: hidden;
+//   background: $color1;
+//   color: #ffffff;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
+// </ОБОЛОЧКА============================================
+
+// <ОСНОВНАЯ СЕТКА========================================
+.container {
+    max-width: $mw + 40 + px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+// </ОСНОВНАЯ СЕТКА=======================================
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    // min-height: 100vh;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    text-align: center;
+}
+
+.page {
+    overflow: hidden;
+    width: 100%;
+    transition: all 1s ease-in-out 0s;
+}
+
+.page-wrapper {
+    width: 100%;
+    height: calc(100vh - 80px);
+    // min-height: calc(100vh - 80px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease-in-out 0s;
+
+    @include flex();
+}
+
+.common-btn {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid #ffffff;
+    background: transparent;
+    border-radius: 60px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.6s ease 0s;
+    user-select: none;
+}
+
+.common-btn:hover {
+    border: 0;
+    background: $pinkyColor;
+    color: #000000;
+}
+
+.common-btn.white {
+    border: 1.5px solid #000000;
+    color: #000000;
+}
+
+.common-btn.white:hover {
+    background: $pinkyColor;
+}
+//hidden-page ==========================================
+.hidden-page {
+    opacity: 0;
+    transition: all 1s ease-in-out 0s;
+    visibility: hidden;
+}
+
+.hide {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease 0s;
+    visibility: hidden;
+}

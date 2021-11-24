@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>art-quiz</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link href="./assets/favicon.ico" rel="shortcut icon" />
+	<!-- CSS -->
+
+</head>
+
+<body>
+	<!-- * Body code -->
+	<!-- * header -->
+	<!-- * main -->
+	<div class="container">
+
+		<!-- hidden-page и style="display: none;" убрать -->
+		<div class="main-page page">
+			<div class="main-page__wrapper page-wrapper">
+				<div class="main-page__logo"></div>
+				<div class="main-page__buttons">
+
+					<div class="main-page__artists main-page__artists-wrapper">
+						<div class="main-page__artists-img main-page__img"></div>
+						<div class="common-btn ripple">
+							Угадай художника
+						</div>
+					</div>
+
+					<div class="main-page__arts main-page__arts-wrapper">
+						<div class="main-page__arts-img main-page__img"></div>
+						<div class="common-btn ripple">
+							Угадай картину
+						</div>
+					</div>
+
+				</div>
+
+				<div class="blitz-game common-btn ripple">
+					Блиц
+				</div>
+
+				<div class="main-page__settings settings">
+					<div class="settings__upperline">
+						<div class="settings__logo"></div>
+						<div class="settings__title">Настройки</div>
+					</div>
+					<div class="underline"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="settings-page page hidden-page">
+			<div class="settings-page__wrapper page-wrapper">
+				<div class="setting-page__volume  setting-section">
+					<div class="volume-title setting-title">Громкость эффектов</div>
+					<div class="volume-wrapper">
+						<button class="volume player-icon"></button>
+						<input type="range" value="20" min="0" max="100" step="1" name="volume" class="progress progress-volume">
+					</div>
+				</div>
+
+				<div class="setting-page__time-chackbox setting-section">
+					<div class="time-title setting-title">Игра на время</div>
+					<input type="checkbox" id="time-checkbox">
+
+					<div class="time-value">
+						<label for="time-checkbox" id="label-name" class="popup__content-menu-name">
+							Выкл.
+						</label>
+						<label for="time-checkbox" id="label-icon" class="time-value__icon">
+						</label>
+					</div>
+				</div>
+
+				<div class="setting-page__time-value setting-section">
+					<div class="time-title setting-title">Время на ответ</div>
+					<div class="time-value__wrapper">
+						<button type="button" onclick="this.nextElementSibling.stepDown()">–</button>
+						<input type="number" min="5" max="30" value="5" step="5" readonly>
+						<button type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+					</div>
+				</div>
+
+				<div class="settings-page__btns">
+					<div class="settings-page__default-btn default-btn common-btn ripple">
+						Стандартные настройки
+					</div>
+					<div class="settings-page__save-btn save-btn common-btn ripple">
+						Сохранить и выйти
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- hidden-page и style="display: block;" -->
+		<div class="artists-page page hidden-page">
+			<div class="artists-page__wrapper page-wrapper">
+
+				<div class="artists-page__header">
+					<div class="artists-page__title">Угадай художника</div>
+					<div class="artists-page__home-btn home-btn">
+						<div class="home-btn__text">на главную</div>
+						<div class="underline underline-white"></div>
+					</div>
+
+					<div class="artists-page__logo main-page__logo main-page__logo-min home-btn"></div>
+				</div>
+
+				<div class="artists-page__cards cards-categories">
+
+					<!-- 12 cards from JS -->
+
+					<!-- <div class="artists-page__card artists-card">
+						<div class="artists-card__text">
+							<div class="artists-card__text-title">HTML</div>
+							<div class="artists-card__text-total">num</div>
+						</div>
+						<div class="artists-card__img artists-card-01img">
+						</div>
+						<div class="artists-card__shows">Play again</div>
+					</div> -->
+
+				</div>
+
+			</div>
+		</div>
+
+		<!-- style="display: block;"  hidden-page-->
+		<div class="arts-page page hidden-page">
+			<div class="artists-page__wrapper page-wrapper">
+
+				<div class="artists-page__header">
+					<div class="artists-page__title">Угадай картину</div>
+					<div class="artists-page__home-btn home-btn">
+						<div class="home-btn__text">на главную</div>
+						<div class="underline underline-white"></div>
+					</div>
+
+					<div class="artists-page__logo main-page__logo main-page__logo-min home-btn"></div>
+				</div>
+
+				<div class="arts-page__cards cards-categories">
+
+					<!-- 12 cards from JS -->
+
+					<!-- <div class="artists-page__card artists-card">
+						<div class="artists-card__text">
+							<div class="artists-card__text-title">HTML</div>
+							<div class="artists-card__text-total">num</div>
+						</div>
+						<div class="artists-card__img artists-card-01img">
+						</div>
+						<div class="artists-card__shows">Play again</div>
+					</div> -->
+
+				</div>
+
+			</div>
+		</div>
+
+		<!-- style="display: block;"  hidden-page-->
+		<div class="artists-questions page hidden-page">
+			<div class=" artists-questions__wrapper page-wrapper">
+
+				<div class=" artists-questions__header">
+
+					<div class="artists-questions__back-btn back-btn">
+						<div class="home-btn__text">назад к уровням</div>
+						<div class="underline underline-white"></div>
+					</div>
+
+					<div class="artists-page__home-btn home-btn">
+						<div class="home-btn__text">на главную</div>
+						<div class="underline underline-white"></div>
+					</div>
+
+					<div class="artists-questions__logo main-page__logo main-page__logo-min home-btn"></div>
+				</div>
+
+				<div class="artists-questions__cards">
+
+					<!-- from JS artists -->
+					<!-- 					<div class="artists-questions__card questions-card">
+						<div class="questions-card__top-info">
+							<div class="questions-card__position">${num + 1}/10
+							</div>
+							<div class="questions-card__timer">00:01</div>
+						</div>
+						<div class="questions-card__title">
+							Кто написал картину "${stage[num].name}"?</div>
+						<div class="questions-card__img" style="background-image: url(./assets/img/img/66.webp)">
+						</div>
+						<div class="questions-card__answers question-answers">
+							<div class="common-btn question-answers__answer">${answers[0]}</div>
+							<div class="common-btn question-answers__answer">${answers[1]}</div>
+							<div class="common-btn question-answers__answer">${answers[2]}</div>
+							<div class="common-btn question-answers__answer">${answers[3]}</div>
+						</div>
+					</div> -->
+					<!-- end of JS -->
+
+					<!-- from JS arts -->
+					<!-- 			<div class="artists-questions__card questions-card">
+						<div class="questions-card__top-info">
+							<div class="questions-card__position">${num + 1}/10
+							</div>
+							<div class="questions-card__timer">00:01</div>
+						</div>
+						<div class="questions-card__title">
+							Какую из этих картин написал ${stage[num].author}?</div>
+						<div class="questions-card__answers question-answers question-answers-imgs ">
+							<div class="answer-img question-answers__answer" data="${answers[0]}"
+								style="background-image: url(./assets/img/img/66.webp)">
+								<div class="answer-img-color"></div>
+							</div>
+							<div class="answer-img question-answers__answer" data="${answers[1]}"
+								style="background-image: url(./assets/img/img/67.webp)">
+								<div class="answer-img-color"></div>
+							</div>
+							<div class="answer-img question-answers__answer" data="${answers[2]}"
+								style="background-image: url(./assets/img/img/68.webp)">
+								<div class="answer-img-color"></div>
+							</div>
+							<div class="answer-img question-answers__answer" data="${answers[3]}"
+								style="background-image: url(./assets/img/img/69.webp)">
+								<div class="answer-img-color"></div>
+							</div> -->
+					<!-- end of JS -->
+
+				</div>
+			</div>
+		</div>
+
+		<!-- style="display: block;"  hidden-page-->
+		<div class="result-page page hidden-page">
+			<div class="result-page__wrapper page-wrapper">
+
+				<div class="result-page__header">
+					<div class="result-page__header-top-section">
+						<div class="result-page__title">Результаты уровня</div>
+						<div class="result-page__back">
+							<div class="home-btn__text">назад</div>
+							<div class="underline underline-white"></div>
+						</div>
+					</div>
+
+					<div class="result-page__logo main-page__logo main-page__logo-min home-btn"></div>
+				</div>
+
+				<div class="result-page__cards">
+
+					<!-- 10 imgs cards from JS -->
+					<!-- 				<div class="result-page__card result-card">
+						<div class="result-card__img" style="background-image: url(./assets/img/img/66.webp);">
+							<div class="result-card__show-info">
+								<div class="result-card__name">${name}</div>
+								<div class="result-card__author">${author}, <span class="result-card__year">${year}</span></div>
+							</div>
+						</div>
+					</div> -->
+					<!-- end of JS -->
+
+				</div>
+			</div>
+		</div>
+
+		<!-- style="display: block;"  hidden-page-->
+		<div class="blitz-page page hidden-page">
+			<div class="blitz__wrapper page-wrapper">
+
+				<div class="blitz__header">
+
+					<div class="blitz__home-btn home-btn">
+						<div class="home-btn__text">на главную</div>
+						<div class="underline underline-white"></div>
+					</div>
+
+					<div class="blitz__home-btn blitz__logo main-page__logo main-page__logo-min home-btn"></div>
+				</div>
+
+				<div class="blitz__question blitz-question">
+
+					<!-- from JS -->
+					<!-- 					<div class="blitz-question__card">
+						<div class="questions-card__top-info blitz-top-info">
+							<div class="questions-card__position blitz-position">
+								<div class="questions-card__position-number">
+									Вопрос номер: <span>154</span>
+								</div>
+								<div class="questions-card__position-current">
+									Текущий результат: <span>12</span>
+								</div>
+								<div class="questions-card__position-top">
+									Лучший результат: <span>37</span>
+								</div>
+							</div>
+							<div class="questions-card__timer timer-blitz">
+								00:01</div>
+						</div>
+						<div class="questions-card__title">
+							Картину "${currentName}"<br>
+							написал
+							${answers[0]}?</div>
+						<div class="blitz-question__img" style="background-image: url(./assets/img/img/66.webp)">
+							<div class="blitz-question__img-result"></div>
+						</div>
+						<div class="blitz-question__answers">
+							<div class="blitz-question__answer-yes common-btn">Да</div>
+							<div class="blitz-question__answer-no common-btn">Нет</div>
+						</div>
+					</div>
+				</div> -->
+					<!-- end of JS -->
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="container">
+			<div class="personal-data__info">
+				<div class="personal-data__year">© 2021</div>
+
+				<a href="https://rs.school/js/" target="_blank">
+					<div class="personal-data__school"></div>
+				</a>
+
+				<a href="https://github.com/DmytroZozuliak" target="_blank">
+					<div class="personal-data__gihub">Dmytro Zozuliak</div>
+				</a>
+
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal-wrapper modal-wrapper-answer hide">
+		<div class="modal-window modal-answer">
+
+			<div class="modal-answer__nested-info">
+				<!-- form JS -->
+
+				<!-- <div class="modal-answer__img">
+					<div class="modal-answer__result"></div>
+				</div>
+				<div class="modal-answer__name">name</div>
+				<div class="modal-answer__author">author <span class="modal-answer__year">1922</span></div> -->
+
+			</div>
+
+
+			<div class="modal-answer__nextbtn common-btn white"><span>Следующая</span></div>
+
+		</div>
+
+	</div>
+
+	<div class="modal-wrapper modal-wrapper-score hide">
+		<div class="modal-window modal-score">
+			<!-- form JS -->
+
+			<!-- <div class="modal-score__icon"></div>
+			<div class="modal-score__text">Ваш результат:</div>
+
+			<div class="modal-score__nested-info">
+				<div class="modal-score__current">2</div>
+				<div class="modal-score__divide">/</div>
+				<div class="modal-score__total">10</div>
+			</div>
+
+			<div class="modal-score__btns">
+				<div class="home-btn common-btn white"><span>На главную</span></div>
+				<div class="next-quiz common-btn white"><span>Следующий квиз</span></div>
+			</div> -->
+
+		</div>
+
+	</div>
+
+	<!-- аудиофайлы -->
+	<audio id="click-sound" src="./assets/sounds/click.mp3"></audio>
+	<audio id="correct-sound" src="./assets/sounds/correct-answer-sound-1.mp3"></audio>
+	<audio id="end-round-sound" src="./assets/sounds/end-of-round.mp3"></audio>
+	<audio id="wrong-sound" src="./assets/sounds/wrong-sound-effect.mp3"></audio>
+
+	<!-- * footer -->
+	<!-- * End of body code -->
+
+</body>
+
+
+
+</html>

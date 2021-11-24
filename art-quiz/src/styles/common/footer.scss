@@ -1,0 +1,52 @@
+.personal-data__info {
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 5px 20px;
+    color: #ffffff;
+    column-gap: 20px;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    line-height: 16px;
+    transition: all 0.3s ease 0s;
+
+    @include flex();
+}
+
+.personal-data__info a {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.3s ease 0s;
+}
+
+.personal-data__school {
+    width: 100px;
+    height: 37px;
+    margin-left: 75px;
+    background-color: #ffffff;
+    cursor: pointer;
+    mask-image: url('../assets/svg/rs_school_js.svg');
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    transition: all 0.3s ease;
+}
+
+.personal-data__info a:hover {
+    opacity: 1;
+}
+
+.personal-data__info a:active {
+    transform: scale(1.1);
+}
+
+@media (max-width: 1000px) {
+    .personal-data__info {
+        row-gap: 8px;
+    }
+}
+
+@media (max-width: 500px) {
+    .personal-data__school {
+        margin-left: 0;
+    }
+}
