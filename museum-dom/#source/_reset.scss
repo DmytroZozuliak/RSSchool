@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+// HTML5 display-role reset for older browsers
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+//! Добавление
+
+// Указываем box sizing
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// Убираем внутренние отступы
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+// Выставляем основные настройки по-умолчанию для body
+html,
+body {
+  height: 100%;
+  min-width: $minwidth;
+}
+body {
+  line-height: 1;
+  font-size: 14px;
+  font-family: $fontfamily;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+// даляем стандартную стилизацию для всех ul и il, у которых есть атрибут class
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+// Элементы a, сбрасываем до дефолтных стилей
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+// Упрощаем работу с изображениями
+img {
+  vertical-align: top;
+}
+
+// Кнопки, инпуты, сброс стилей
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+// Наследуем шрифты для инпутов и кнопок
+input,
+button,
+textarea,
+select {
+  font-family: $fontfamily;
+}
+
+// заголовки
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+// Удаляем все анимации и переходы для людей, которые предпочитай их не использовать
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* End of reset style */

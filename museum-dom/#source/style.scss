@@ -1,0 +1,334 @@
+// <МИКСИНЫ>==============================================
+@mixin anim($time, $delay) {
+  -webkit-transition: all $time ease $delay;
+  transition: all $time ease $delay;
+}
+@mixin anim_cubic($time, $delay) {
+  -webkit-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+  transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+}
+@mixin flex() {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0;
+}
+@mixin flexorder($val) {
+  -webkit-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  order: $val;
+}
+// </МИКСИНЫ>============================================
+
+// <ШРИФТЫ>==============================================
+
+// <ПОДКЛЮЧАЕМ ШРИФТЫ>===================================
+
+// *Пример подключение шрифт
+// @font-face
+//   font-family: 'Conv_Cocaine Nosejob'
+//   src: url('../fonts/Cocaine Nosejob.eot')
+//   src: local('☺'), url('../fonts/Cocaine Nosejob.woff') format('woff')
+//     url('../fonts/Cocaine Nosejob.ttf') format('truetype')
+//     url('../fonts/Cocaine Nosejob.svg') format('svg')
+//   font-weight: normal
+//   font-style: normal
+
+// </ПОДКЛЮЧАЕМ ШРИФТЫ>==================================
+
+// <ШРИФТ ПО УМОЛЧАНИЮ===================================
+$fontfamily: 'Roboto', sans-serif;
+// </ШРИФТ ПО УМОЛЧАНИЮ==================================
+// </ШРИФТЫ>=============================================
+
+// <ПЕРЕМЕННЫЕ===========================================
+$minwidth: 320px;
+// Контейнер $mw
+$mw: 1440;
+$md1: $mw + 12;
+$md2: 1024;
+$md3: 768;
+$md4: 420;
+
+// Доп шрифт
+$fontfamily2: 'Forum', cursive;
+// Размер основной
+$fontSize1: 80px;
+$fontSize2: 32px;
+//colors
+//Bg-dark
+$color1: #030303;
+//Dark-red
+$color2: #710707;
+//Font-gold
+$color3: #9d8665;
+
+// </ПЕРЕМЕННЫЕ==========================================
+
+// <ОБНУЛЕНИЕБ ОБЩИЕ ПАРАМЕТРЫ===========================
+@import '_reset';
+html,
+body {
+  scroll-behavior: smooth;
+}
+// </ОБНУЛЕНИЕБ ОБЩИЕ ПАРАМЕТРЫ=========================
+
+// <ОБОЛОЧКА=============================================
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  background: $color1;
+  color: #ffffff;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-items: center;
+}
+// </ОБОЛОЧКА============================================
+
+// <ОСНОВНАЯ СЕТКА========================================
+.container {
+  max-width: $mw + 40 + px;
+  margin: 0px auto;
+  padding: 0px 20px;
+}
+// </ОСНОВНАЯ СЕТКА=======================================
+
+// <ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ========
+@import '_ibg';
+// </ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ=======
+
+// <ОСНОВНОЙ КОД========================================
+// all sections
+.section {
+  padding: 75px 0px;
+}
+.white-section {
+  background: #ffffff;
+  color: #000000;
+}
+.section-title {
+  font-family: $fontfamily2;
+  font-size: $fontSize1;
+  line-height: 90px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+.line {
+  width: 100%;
+  height: 3px;
+}
+
+// media queries
+@media (max-width: $md2+px) {
+  .section {
+    padding: 60px 0px;
+  }
+  .section-title {
+    font-size: 50px;
+    line-height: 75px;
+  }
+}
+@media (max-width: $md3+px) {
+  .section {
+    padding: 40px 0px;
+  }
+  .section-title {
+    font-size: 40px;
+    line-height: 60px;
+  }
+}
+@media (max-width: $md4+px) {
+  .section-title {
+    font-size: 28px;
+    line-height: 40px;
+  }
+}
+// ================================================================
+// HEADER
+@import '_header';
+// =====================================================
+
+// Section Welcome
+@import '_welcomeSection';
+// =====================================================
+
+// Section virtual
+@import '_virtualSection';
+// =====================================================
+
+// Section explore
+@import '_exploreSection';
+// =====================================================
+
+// Section video
+@import '_videoSection';
+// =====================================================
+
+// Section gallery
+@import '_gallerySection';
+// =====================================================
+
+// Section tickets
+@import '_ticketsSection';
+// =====================================================
+
+// popUp tickets
+@import '_popupTickets';
+// =====================================================
+
+// Section parallax
+.parallax {
+  height: 400px;
+  background-image: url(../assets/img/parallax.webp);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+}
+@media (max-width: $md3+px) {
+  .parallax {
+    height: 300px;
+    background-image: url(../assets/img/parallax_min.webp);
+  }
+}
+// =====================================================
+
+// Section contacts
+@import '_contactsSection';
+// =====================================================
+
+// footer
+@import '_footer';
+// ======================================================
+
+// change theme
+.dark-theme {
+  position: fixed;
+  z-index: 10;
+  bottom: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  font-size: 13px;
+  background: $color2;
+  border-radius: 50%;
+  color: #ffffff;
+  overflow: hidden;
+  transition: all 0.6s ease 0s;
+}
+.dark-theme .circle {
+  position: absolute;
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: scale 0.5s ease-out;
+}
+.toggle-theme {
+  background: #fff;
+  color: $color2;
+}
+.toggle-theme .circle {
+  background-color: $color2;
+}
+
+.white-text {
+  color: #fff;
+}
+.black-text {
+  color: #000;
+}
+.white-background {
+  background: #000;
+  border-color: #fff;
+}
+.red-background {
+  background: $color2;
+}
+.grey-background {
+  background: #ccc;
+}
+.section-line {
+  border-bottom: 1px solid #ccc;
+}
+// ======================================================
+
+// Pesonal data
+.personal-data__line {
+  background: #666666;
+  width: 100%;
+  height: 3px;
+}
+.personal-data__info {
+  min-height: 124px;
+  @include flex();
+  justify-content: space-between;
+  align-items: center;
+
+  font-weight: 100;
+  font-size: 22px;
+  line-height: 22px;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+.personal-data__info a {
+  transition: all 0.3s ease 0s;
+}
+.personal-data__info a:hover {
+  color: $color3;
+  transition: all 0.3s ease 0s;
+}
+@media (max-width: 700px) {
+  .personal-data__school {
+    display: none;
+  }
+}
+@media (max-width: $md4+px) {
+  .personal-data__info {
+    min-height: 102px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+@media (max-width: 350px) {
+  .personal-data__info {
+    margin: 40px 0px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .personal-data__school {
+    display: block;
+  }
+}
+
+// </ОСНОВНОЙ КОД=======================================
+
+/* * {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+* * {
+  background-color: rgba(0, 255, 0, 0.2);
+}
+* * * {
+  background-color: rgba(0, 0, 255, 0.2);
+}
+* * * * {
+  background-color: rgba(255, 0, 255, 0.2);
+}
+* * * * * {
+  background-color: rgba(0, 255, 255, 0.2);
+}
+* * * * * * {
+  background-color: rgba(255, 255, 0, 0.2);
+}
+* * * * * * * {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+* * * * * * * * {
+  background-color: rgba(0, 255, 0, 0.2);
+}
+* * * * * * * * * {
+  background-color: rgba(0, 0, 255, 0.2);
+} */

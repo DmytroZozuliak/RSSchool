@@ -1,0 +1,137 @@
+.virtual__title {
+  color: $color3;
+}
+.virtual__line {
+  background: $color2;
+  margin: 25px 0px 75px 0px;
+}
+.virtual__cards {
+  @include flex();
+  flex-wrap: wrap;
+  row-gap: 78px;
+  justify-content: space-between;
+}
+.card {
+  width: 30.55%;
+  :hover {
+    cursor: pointer;
+  }
+}
+.card:hover > a .card__line {
+  width: 100%;
+  transition: all 0.5s ease;
+}
+.card__img {
+  padding: 0px 0px 64.8% 0px;
+}
+.card__title {
+  margin: 25px 0px 9px 0px;
+  font-family: $fontfamily2;
+  font-size: $fontSize2;
+  line-height: 35px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+.card__line {
+  width: 300px;
+  height: 2px;
+  background: $color2;
+  transition: all 0.5s ease;
+}
+.card__subtitle {
+  margin: 10px 0px;
+  font-weight: 100;
+  font-size: 22px;
+  line-height: 26px;
+}
+.card__text {
+  font-weight: 100;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+@media (max-width: $md2+px) {
+  .card {
+    width: 33.55%;
+  }
+  .virtual__line {
+    margin: 20px 0px 60px 0px;
+  }
+  .virtual__cards {
+    justify-content: space-evenly;
+    row-gap: 60px;
+  }
+  .card__img {
+    padding: 0px 0px 65.15% 0px;
+  }
+  .card__title {
+    font-size: 28px;
+    line-height: 31px;
+    letter-spacing: 3px;
+
+    margin: 25px 0px 10px 0px;
+  }
+  .card__line {
+    width: 150px;
+  }
+  .card__subtitle {
+    font-size: 20px;
+    line-height: 23px;
+  }
+  .card__text {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+@media (max-width: $md3+px) {
+  .virtual__line {
+    margin: 20px 0px 40px 0px;
+  }
+
+  .virtual__cards {
+    row-gap: 40px;
+  }
+  .card {
+    width: 38.5%;
+  }
+  .card:last-child {
+    margin-bottom: 40px;
+  }
+  .card__img {
+    padding: 0px 0px 64.3% 0px;
+  }
+  .card__title {
+    font-size: 22px;
+    line-height: 24px;
+  }
+  .card__subtitle {
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+
+@media (max-width: $md4+px) {
+  .virtual__line {
+    margin: 20px 0px 40px 0px;
+  }
+  .virtual__cards {
+    justify-content: center;
+  }
+  .card {
+    width: 73.7%;
+  }
+
+  .card:last-child {
+    margin-bottom: 0px;
+  }
+  .card__title {
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 5px;
+  }
+  .card__subtitle {
+    font-size: 16px;
+    line-height: 19px;
+  }
+} ;
